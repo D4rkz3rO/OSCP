@@ -1,4 +1,6 @@
+-----------------------------------
 -------- NMAP --------
+-----------------------------------
 nmap -Pn -v -O -sV -sC --top-ports 30000 -oA default IP --open
 
 nmap -Pn -v -sU -T4 -oA nmap/udp IP --open
@@ -27,7 +29,18 @@ EyeWitness
 Unicord scan first then nmap those ports
 
   unicornscan -i tun0 -I -mT $IP:a
-  
-	
 
+-----------------------------------
+-------- Directory Search ---------
+-----------------------------------
+
+gobuster -u IP -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -x txt,php,asp,aspx -t 20
+
+gobuster -u IP -w /usr/share/dirbuster/wordlists/directory-list-2.3-small.txt -fw -k -q -v -l -s "200" //-k skip certificate validation
+
+gobuster -u IP -w /usr/share/seclists/Discovery/Web-Content/common.txt -t 80 -a Linux
+
+gobuster -u IP -w /usr/share/seclists/Discovery/Web-Content/big.txt -t 80 -a Linux
+
+gobuster -u IP -w /usr/share/wordlists//dirbuster/something_medium.txt -t 80 -a Linux
   
