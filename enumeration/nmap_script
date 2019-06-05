@@ -1,0 +1,17 @@
+run in screen
+nmap -sV -sC -oA nmap/initial IP && nmap -p- -A -oA nmap/full IP && nmap -sU -T4 -oA nmap/udp IP
+
+nmap -sC -sV -oA nmap/initial IP
+
+Unicord scan first then nmap those ports
+
+unicornscan -i tun0 -I -mT $IP:a
+
+
+
+Scan 65535 ports and output to nmap_full file in xml, grepable, and default
+  nmap -p- -A -oA nmap_full IP
+  
+UDP port scan, set thread level to 4 out of 5
+  nmap -sU -T4 IP
+
