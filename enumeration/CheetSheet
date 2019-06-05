@@ -1,0 +1,33 @@
+-------- NMAP --------
+nmap -Pn -v -O -sV -sC --top-ports 30000 -oA default IP --open
+
+nmap -Pn -v -sU -T4 -oA nmap/udp IP --open
+
+Scan 65535 ports and output to nmap_full file in xml, grepable, and default
+  nmap -Pn -p- -A -oA nmap/full IP --open
+  
+UDP port scan, set thread level to 4 out of 5
+  nmap -Pn -v -sU -T4 IP --open
+ 
+Web Ports
+  Nmap -Pn -v -p 80,443, 8080, 8081, 8443 -oA nmap_web IP
+		Port 445 – Windows Workstations
+			for h in `cat allSMB`;do echo $h >> RDPComputers.txt && net rpc -S $h -W DOMAIN -U USER%'PASSWORD' group members "Remote Desktop Users" >> RDPComputers.txt; done;
+			MS08-067
+				nmap -p445 -v -oA out_ms08_targets --script smb-vuln-ms08-067 IP
+			MS17-010
+				nmap -p445 -v -oA out_ms17_targets --script smb-vuln-ms17-010 IP
+		Port 3389 - RDP
+			https://github.com/CVE-2019-0708/CVE-2019-0708
+		FTP/SQL/SSH/Telnet/VNC/IPMI
+    
+EyeWitness
+  ./EyeWitness.py -x nmap_web --add-http-ports 66,80,81,443,457,1080,1100,1241,1352,1434,1521,1944,2301,3128,3306,4000,4001,4002,4100,5000,5432,5800,5801,5802,6346,6347,7001,7002,8080,8888,30821,82,90,280,591,593,981,1050,1090,1091,1098,1099,1311,1810,2082,2083,3124,3780,3790,3389,4443,5080,5500,5501,7778,8000,8007,8008,8009,8010,8081,8082,8083,8084,8088,8089,8090,8091,8092,8093,8123,8180,8181,8443,8444,8834,9080,9090,10000,10443 --headless
+
+Unicord scan first then nmap those ports
+
+  unicornscan -i tun0 -I -mT $IP:a
+  
+	
+
+  
