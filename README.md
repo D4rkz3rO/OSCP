@@ -19,3 +19,7 @@
 * https://awakened1712.github.io/oscp/oscp-lfi-rfi/
 
 
+
+
+i686-w64-mingw32-gcc 40564.c –o exploit.exe –lws2_32
+
