@@ -15,6 +15,7 @@
 * http://www.fuzzysecurity.com/tutorials/16.html
 
 ### Other
+* https://recipeforroot.com/site-map/
 * https://highon.coffee/blog/reverse-shell-cheat-sheet/
 * https://awakened1712.github.io/oscp/oscp-lfi-rfi/
 
