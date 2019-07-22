@@ -24,3 +24,5 @@
 
 i686-w64-mingw32-gcc 40564.c –o exploit.exe –lws2_32
 
+https://github.com/maaaaz/impacket-examples-windows
+
