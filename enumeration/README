@@ -36,13 +36,13 @@ Unicord scan first then nmap those ports
 -------- Directory Search ---------
 -----------------------------------
 
-gobuster -u IP -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -x txt,php,asp,aspx -t 20
+gobuster dir -u IP -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -x txt,php,asp,aspx -t 20
 
-gobuster -u IP -w /usr/share/dirbuster/wordlists/directory-list-2.3-small.txt -fw -k -q -v -l -s "200" //-k skip certificate validation
+gobuster dir -u IP -w /usr/share/dirbuster/wordlists/directory-list-2.3-small.txt -fw -k -q -v -l -s "200" //-k skip certificate validation
 
-gobuster -u IP -w /usr/share/seclists/Discovery/Web-Content/common.txt -t 80 -a Linux
+gobuster dir -u IP -w /usr/share/seclists/Discovery/Web-Content/common.txt -t 80 -a Linux
 
-gobuster -u IP -w /usr/share/seclists/Discovery/Web-Content/big.txt -t 80 -a Linux
+gobuster dir -u IP -w /usr/share/seclists/Discovery/Web-Content/big.txt -t 80 -a Linux
 
-gobuster -u IP -w /usr/share/wordlists//dirbuster/something_medium.txt -t 80 -a Linux
+gobuster dir -u IP -w /usr/share/wordlists//dirbuster/something_medium.txt -t 80 -a Linux
   
